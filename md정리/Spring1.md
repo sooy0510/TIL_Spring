@@ -1,40 +1,37 @@
-# POJO(Plain Old Java Object)
+# 스프링 프레임워크의 특징
 
-> 단순한 자바 객체
-
-<br>
-
-- https://m.blog.naver.com/writer0713/220700687650 참고
-
-  ```
-  구글링을 하면 많은 자료들이 POJO를 getter / setter를 가진 단순한 자바 오브젝트로 정의하고 있다.
-  
-  위의 내용들에 근거하면 POJO는 "getter / setter를 가진 단순한 자바 오브젝트"이다 가 아니라
-  
-  "getter / setter를 가진 단순한 자바 오브젝트"는 POJO이다. 라고 하는게 맞을것 같다.
-  
-  "getter / setter를 가진 단순한 자바 오브젝트"는 분명 의존성도 없고, 테스트도 용이하며 추후 수정이 편리하니 POJO로 볼 수 있을것 같다.
-  ```
+> IoC와 AOP를 지원하는 경량의 컨테이너 프레임워크
 
 <br>
 
-- Not POJO 클래스 
+## 1. 경량 (Lightweight)
 
-  - Servlet 클래스 - 대표적인 Not POJO 클래스
+- 스프링은 크기 측면에서 가볍다
 
-    - 개발자 마음대로 만들 수 없으며, 반드시 Servlet에서 요구하는 규칙에 맞게 클래스를 만들어야 실행 가능하다
+  - 여러 개의 모듈로 구성되어 있고, 각 모듈은 하나 이상의 JAR파일로 구성되어 있다
 
+  - 이 몇개의 JAR 파일만 있으면 개발과 실행이 모두 가능하다
+
+    => 따라서 스프링을 이용해서 만든 애플리케이션의 배포 역시 매우 빠르고 쉽다
+    
+  - 스프링 기반 웹 애플리케이션 개발에 필요한 라이브러리들
+  
     <br>
-
-  - Servlet 클래스 작성 규칙
-
-    - javax.servlet, javax.servlet.http 패키지를 import해야한다
-    - public 클래스로  
-    - Servlet, GenericServlet, HttpServlet 중 하나를 **상속**해야 한다
-    - **기본 생성자**가 있어야 한다
-    - 생명주기에 해당하는 메소드를 **재정의**(Overriding)한다
+  
+    > ![1576159099330](images/1576159099330.png)
+  
 
 <br>
+
+<br>
+
+<br>
+
+## 2. IoC (Inversion of Control)
+
+> 제어의 역행
+>
+> 제어권이 프레임워크에 있다
 
 <br>
 
