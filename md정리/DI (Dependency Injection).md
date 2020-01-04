@@ -54,4 +54,55 @@
 
   => 따라서 Setter 인젝션이 동작하려면 기본 생성자도 반드시 필요하다
 
-- `<property>`엘리먼트 사용
+<br>
+
+<br>
+
+### 2.1 `<property>` 엘리먼트
+
+- name` 속성 : 호출하고자 하는 메소드 이름 => ex) 속성값이 "speaker"면 호출되는 메소드는 setSpeaker( )
+
+  <br>
+
+- `ref` 속성 : 생성자 인젝션과 마찬가지로 Setter 메소드를 호출하면서 다른 `<bean>` 객체를 인자로 넘길 때 사용
+
+- `value` 속성 : `<bean>` 객체 말고, 기본형 데이터 넘길 때 사용
+
+<br>
+
+<br>
+
+## 2.2 p 네임스페이스
+
+> Setter 인젝션을 설정할 때, 'p 네임스페이스'를 이용하면 좀 더 효율적인 의존성 주입이 가능하다
+
+<br>
+
+- 스프링 설정 파일(applicationContext.xml) 에서 네임스페이스만 선언해주면 <bean>으로 클래스(기본 생성자) 등록할 때 참조객체나 값을 바로 할당해 주는 방식
+
+- 네임스페이스 선언
+
+  ```xml
+  // applicationContext.xml
+  
+  <beans xmlns="http://www.springframework.org/schema/beans"
+         ...
+         xmlns:p="http://www.springframework.org/schema/p"
+         ...
+  </beans>
+  ```
+
+  <br>
+
+- 기본 생성자 등록
+
+  ``` xml
+  // applicationContext.xml
+  
+  <bean id="tv"
+        class="polymorphism.SamsungTV" p:speaker-ref="sony" p:price="270000"/>
+  
+  <bean id="sony" class="polymorphism.SonySpeaker"/>
+  ```
+
+  
