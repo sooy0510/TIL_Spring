@@ -56,5 +56,15 @@
 
 <br>
 
+#### 2.2.2 ApplicationContext
 
+> BeanFactory가 제공하는 <bean> 객체 관리 기능 외에도 **트랜잭션 관리나 메시지 기반의 다국어 처리** 등 다양한 기능을 지원한다
 
+<br>
+
+- **컨테이너가 구동되는 시점**에 `<bean>` 등록된 클래스들을 객체 생성하는 즉시 로딩(pre-loading) 방식으로 동작
+- 웹 애플리케이션 개발도 지원하므로 대부분 스프링 프로젝트는 ApplicationContext 유형의 컨테이너를 이용
+
+- 대표 ApplicationContext구현 클래스
+  - GenericXmlApplicationContext
+  - **XmlWebApplicationContext** : 웹 기반의 스프링 애플리케이션을 개발할 때 사용하는 컨테이너
